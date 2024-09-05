@@ -40,6 +40,12 @@
         firstNum = randomNumber();
         secondNum = randomNumber();
         operator = randomOperator();
+
+        // Ensure firstNum is greater than or equal to secondNum for subtraction and division
+        if ((operator === "-" || operator === "÷") && firstNum < secondNum) {
+            [firstNum, secondNum] = [secondNum, firstNum];
+        }
+
         correctAnswer = calculateAnswer();
     }
 
